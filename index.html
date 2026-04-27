@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinAmigo — Offline-First Personal Finance for India</title>
+  <meta name="description" content="FinAmigo is your privacy-first personal finance dashboard. Auto-import bank statements, track spending, and understand your money — 100% on-device.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/images/app_icon.png">
+</head>
+<body>
+
+  <!-- ── Navbar ──────────────────────────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="container nav-content">
+      <a href="https://amigolabs.in" class="org-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        AmigolLabs
+      </a>
+      <a href="#" class="logo">
+        <img src="assets/images/app_icon.png" alt="FinAmigo">
+        FinAmigo
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#banks">Banks</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#" onclick="alert('Coming soon on Google Play!'); return false;" class="btn btn-primary">Download</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#features">Features</a>
+      <a href="#banks">Supported Banks</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://amigolabs.in">← AmigolLabs</a>
+    </div>
+  </nav>
+
+  <!-- ── Hero ────────────────────────────────────────────────────────────── -->
+  <header class="hero">
+    <div class="glow-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="container hero-content">
+      <div class="hero-text fade-up">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          100% Offline · Zero Cloud · India-First
+        </div>
+        <h1>Your money,<br><span class="highlight">finally clear.</span></h1>
+        <p>FinAmigo automatically imports statements from 9+ banks, categorizes every transaction, and gives you a complete financial picture — all privately on your device.</p>
+        <div class="cta-group">
+          <a href="#" onclick="alert('Coming soon on Google Play!'); return false;" class="btn btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.24.99.2l12.6-6.95-2.54-2.54-11.05 9.29zM.17 1.04C.07 1.3 0 1.6 0 1.94v20.12c0 .34.06.64.17.9l.09.09 11.27-11.27v-.27L.26.95.17 1.04zM20.65 10.48l-2.93-1.65-2.83 2.83 2.83 2.83 2.95-1.66c.84-.47.84-1.24-.02-1.35zM4.17.24l12.6 6.96-2.54 2.54L3.18.45c.3-.38.7-.4.99-.21z"/></svg>
+            Get on Google Play
+          </a>
+          <a href="#features" class="btn btn-secondary">See features</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            No account needed
+          </div>
+          <div class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            No data leaves your phone
+          </div>
+          <div class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Free to start
+          </div>
+        </div>
+      </div>
+      <div class="hero-image-container fade-up">
+        <div class="phone-glow"></div>
+        <img src="assets/images/feature_banner.png" alt="FinAmigo App Preview" class="hero-image">
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Score strip ──────────────────────────────────────────────────────── -->
+  <div class="score-strip">
+    <div class="container score-strip-inner">
+      <div class="score-label">FinAmigo Score™</div>
+      <div class="score-track">
+        <div class="score-segment bad">Poor<br><span>300–499</span></div>
+        <div class="score-segment fair">Fair<br><span>500–599</span></div>
+        <div class="score-segment good">Good<br><span>600–699</span></div>
+        <div class="score-segment great">Great<br><span>700–799</span></div>
+        <div class="score-segment excellent">Excellent<br><span>800–850</span></div>
+      </div>
+      <div class="score-desc">6 weighted dimensions — Savings Rate, Impulse Control, Bill Regularity, Income Stability, Investment Habit, Debt Discipline</div>
+    </div>
+  </div>
+
+  <!-- ── Features ─────────────────────────────────────────────────────────── -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="section-label fade-up">Features</div>
+      <h2 class="fade-up">Everything you need to<br><span class="highlight">own your finances.</span></h2>
+
+      <div class="feature-grid">
+        <div class="feature-card fade-up">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Privacy first</h3>
+          <p>All processing happens locally on your device using a private SQLite database. No servers. No tracking. No account required.</p>
+        </div>
+
+        <div class="feature-card fade-up">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Auto statement import</h3>
+          <p>Connect Gmail once — FinAmigo automatically detects and imports bank statements from HDFC, SBI, ICICI and more, forever.</p>
+        </div>
+
+        <div class="feature-card fade-up">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+          </div>
+          <h3>Smart categorization</h3>
+          <p>Over 300 built-in rules across 35 categories — groceries, dining, UPI, EMI, subscriptions and more, tagged automatically.</p>
+        </div>
+
+        <div class="feature-card fade-up">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3>FinAmigo Score™</h3>
+          <p>A CIBIL-inspired financial health score (300–850) across 6 weighted dimensions. Understand exactly where to improve.</p>
+        </div>
+
+        <div class="feature-card fade-up">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Unified dashboard</h3>
+          <p>All your bank accounts and credit cards in one view. Track balances, limits, and utilization across HDFC, SBI, ICICI and beyond.</p>
+        </div>
+
+        <div class="feature-card fade-up">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Biometric lock</h3>
+          <p>Fingerprint and PIN authentication protect your data. No one can open the app without your biometric — not even us.</p>
+        </div>
+
+        <div class="feature-card fade-up">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Salary detection</h3>
+          <p>Automatically identifies your salary with periodicity analysis — even across multiple income sources and freelance payments.</p>
+        </div>
+
+        <div class="feature-card fade-up">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>AI insights (Pro)</h3>
+          <p>Powered by Gemini AI — deeper categorization, natural language insights, and personalized financial summaries.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Showcase ──────────────────────────────────────────────────────────── -->
+  <section id="showcase" class="showcase">
+    <div class="container">
+      <div class="section-label fade-up" style="text-align:center">How it works</div>
+      <h2 class="fade-up">See your money <span class="highlight">clearly.</span></h2>
+
+      <div class="showcase-row fade-up">
+        <div class="showcase-text">
+          <div class="showcase-num">01</div>
+          <h3>Unified Dashboard</h3>
+          <p>A bird's-eye view of your financial health — all bank accounts, credit cards, balances and utilization in one secure screen with smooth, cinematic animations.</p>
+        </div>
+        <div class="showcase-img-wrap">
+          <img src="assets/images/screenshot_dashboard.png" alt="Dashboard" class="showcase-img">
+        </div>
+      </div>
+
+      <div class="showcase-row reverse fade-up">
+        <div class="showcase-text">
+          <div class="showcase-num">02</div>
+          <h3>Deep Insights</h3>
+          <p>Track monthly income vs expenses, review your savings rate, spot recurring subscriptions you forgot about, and analyze your top spending merchants.</p>
+        </div>
+        <div class="showcase-img-wrap">
+          <img src="assets/images/screenshot_insights.png" alt="Insights" class="showcase-img">
+        </div>
+      </div>
+
+      <div class="showcase-row fade-up">
+        <div class="showcase-text">
+          <div class="showcase-num">03</div>
+          <h3>Seamless Imports</h3>
+          <p>Gmail auto-sync, SMS parsing, and PDF/CSV upload — FinAmigo handles all the import methods so you never enter a transaction manually.</p>
+        </div>
+        <div class="showcase-img-wrap">
+          <img src="assets/images/screenshot_sync.png" alt="Sync" class="showcase-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Banks ─────────────────────────────────────────────────────────────── -->
+  <section id="banks" class="banks">
+    <div class="container">
+      <div class="section-label fade-up" style="text-align:center">Supported banks</div>
+      <h2 class="fade-up">All your banks, <span class="highlight">one place.</span></h2>
+      <p class="section-sub fade-up">FinAmigo parses statements from India's most popular banks and credit cards with high accuracy.</p>
+      <div class="banks-grid fade-up">
+        <div class="bank-pill">HDFC Savings</div>
+        <div class="bank-pill">HDFC Credit Card</div>
+        <div class="bank-pill">ICICI Credit Card</div>
+        <div class="bank-pill">SBI</div>
+        <div class="bank-pill">Axis Bank</div>
+        <div class="bank-pill">DCB Bank</div>
+        <div class="bank-pill">IDFC Savings</div>
+        <div class="bank-pill">IDFC Credit Card</div>
+        <div class="bank-pill">SMS Parser</div>
+        <div class="bank-pill more">+ More coming</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pricing ────────────────────────────────────────────────────────────── -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <div class="section-label fade-up" style="text-align:center">Pricing</div>
+      <h2 class="fade-up">Simple, honest <span class="highlight">pricing.</span></h2>
+      <p class="section-sub fade-up">Start free. Upgrade when you're ready for more intelligence.</p>
+
+      <div class="pricing-grid">
+        <!-- Free -->
+        <div class="pricing-card fade-up">
+          <div class="plan-name">Free</div>
+          <div class="plan-price">₹0<span>/month</span></div>
+          <div class="plan-desc">Everything you need to get started and stay private.</div>
+          <ul class="plan-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Gmail auto-import</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 9+ bank parsers</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Rule-based categorization</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> FinAmigo Score™</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Biometric lock</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Unified dashboard</li>
+          </ul>
+          <a href="#" onclick="alert('Coming soon!'); return false;" class="btn btn-secondary plan-cta">Get started free</a>
+        </div>
+
+        <!-- Pro -->
+        <div class="pricing-card pro fade-up">
+          <div class="plan-badge">Most popular</div>
+          <div class="plan-name">Pro</div>
+          <div class="plan-price">₹99<span>/month</span></div>
+          <div class="plan-desc">AI-powered insights for people serious about their finances.</div>
+          <ul class="plan-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Everything in Free</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Gemini AI categorization</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Advanced spending insights</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Merchant deduplication</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Transfer detection</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Priority support</li>
+          </ul>
+          <a href="#" onclick="alert('Coming soon!'); return false;" class="btn btn-primary plan-cta">Get Pro</a>
+        </div>
+
+        <!-- Max -->
+        <div class="pricing-card fade-up">
+          <div class="plan-name">Max</div>
+          <div class="plan-price">₹199<span>/month</span></div>
+          <div class="plan-desc">The complete picture — for those who want it all.</div>
+          <ul class="plan-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Everything in Pro</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Natural language search</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Personalized AI summaries</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Investment tracking</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Goal planning</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Early access to new features</li>
+          </ul>
+          <a href="#" onclick="alert('Coming soon!'); return false;" class="btn btn-secondary plan-cta">Get Max</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col brand-col">
+          <a href="#" class="logo" style="margin-bottom:1rem;">
+            <img src="assets/images/app_icon.png" alt="FinAmigo" style="height:32px; border-radius:8px;">
+            FinAmigo
+          </a>
+          <p>Your offline-first personal finance dashboard. Taking back control of your privacy and money.</p>
+          <a href="https://amigolabs.in" class="org-back">A product by AmigolLabs ↗</a>
+        </div>
+        <div class="footer-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#banks">Supported Banks</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Follow</h5>
+          <ul>
+            <li><a href="https://instagram.com/finamigox" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year"></span> AmigolLabs. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

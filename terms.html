@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - FinAmigo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/app_icon.png">
+</head>
+<body>
+    <nav style="background: rgba(0, 0, 0, 0.9);">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/images/app_icon.png" alt="FinAmigo Logo">
+                FinAmigo
+            </a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#showcase">How it Works</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container legal-content">
+        <h1>Terms of <span class="highlight">Service</span></h1>
+        <div class="last-updated">Last Updated: April 25, 2026</div>
+
+        <p>Please read these Terms of Service ("Terms") carefully before using the FinAmigo application ("App") operated by the FinAmigo Team ("us", "we", or "our").</p>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By downloading, installing, or using the App, you agree to be bound by these Terms. If you disagree with any part of the terms, you may not access or use the App.</p>
+
+        <h2>2. Use of the App</h2>
+        <ul>
+            <li><strong>Personal Use:</strong> The App is provided for your personal, non-commercial use to manage your personal finances.</li>
+            <li><strong>Not Financial Advice:</strong> FinAmigo is a data visualization and tracking tool. It does NOT provide professional financial, investment, or legal advice. Any financial decisions you make based on the information provided by the App are made strictly at your own risk.</li>
+            <li><strong>FinAmigo Score:</strong> The "FinAmigo Score" is a proprietary metric designed to reflect general financial health based on your imported data. It is not a formal credit score and is not recognized by any credit bureaus.</li>
+        </ul>
+
+        <h2>3. Data Responsibility</h2>
+        <p>Because FinAmigo is an offline-first application, all your data is stored locally on your device. <strong>You are solely responsible for maintaining backups of your device.</strong> We cannot recover lost data if your device is lost, stolen, or damaged, or if you uninstall the App without exporting your data.</p>
+
+        <h2>4. Accuracy of Information</h2>
+        <p>While we strive to ensure our parsers (for PDFs, CSVs, and emails) are accurate, we cannot guarantee 100% accuracy in data extraction or categorization. It is your responsibility to verify the accuracy of your financial records within the App against your official bank statements.</p>
+
+        <h2>5. Premium Features (Subscriptions)</h2>
+        <p>Certain features (such as AI Tagger using Gemini) are available only under a premium subscription (PRO or MAX tiers). Subscriptions are managed through the respective app store (Google Play or Apple App Store). By subscribing, you agree to the billing terms of the respective platform.</p>
+
+        <h2>6. Limitation of Liability</h2>
+        <p>In no event shall FinAmigo, nor its developers, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the App.</p>
+
+        <h2>7. Changes to Terms</h2>
+        <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. We will provide notice of any significant changes.</p>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <img src="assets/images/app_icon.png" alt="FinAmigo Logo" style="height: 30px;">
+                        FinAmigo
+                    </div>
+                    <p style="font-size: 0.9rem;">Your offline-first personal finance dashboard. Taking back control of your privacy and money.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="highlight">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> FinAmigo. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

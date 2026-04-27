@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - FinAmigo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/app_icon.png">
+</head>
+<body>
+    <nav style="background: rgba(0, 0, 0, 0.9);">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/images/app_icon.png" alt="FinAmigo Logo">
+                FinAmigo
+            </a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#showcase">How it Works</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container legal-content">
+        <h1>Privacy <span class="highlight">Policy</span></h1>
+        <div class="last-updated">Last Updated: April 25, 2026</div>
+
+        <p>At FinAmigo, your privacy is our core foundation. We built this app with a strict "offline-first" architecture because we believe your financial data belongs exclusively to you.</p>
+
+        <h2>1. Data Collection and Storage</h2>
+        <ul>
+            <li><strong>Local Storage Only:</strong> All your financial data, including transaction history, bank statements, and account balances, is stored locally on your device in an encrypted SQLite database.</li>
+            <li><strong>No Cloud Syncing:</strong> We do not have servers to store your financial data. We do not sync your data to the cloud.</li>
+            <li><strong>No Tracking Analytics:</strong> We do not use third-party analytics trackers to monitor your behavior within the app.</li>
+        </ul>
+
+        <h2>2. Data Sources and Permissions</h2>
+        <p>To provide automated financial insights, FinAmigo requires certain permissions depending on the features you use:</p>
+        <ul>
+            <li><strong>Gmail Integration (OAuth/App Password):</strong> If you choose to connect Gmail, the app requests read-only access to scan for bank statements. This processing happens entirely on your device. The app extracts the PDF/CSV attachments, processes them locally, and discards the email content. We do not transmit your emails to our servers.</li>
+            <li><strong>SMS Permissions (Android Only):</strong> If enabled, the app reads incoming SMS messages strictly to identify transaction alerts from supported banks (HDFC, ICICI, SBI). This parsing happens locally on your device.</li>
+            <li><strong>Storage Access:</strong> Required to allow you to manually upload PDF or CSV bank statements.</li>
+        </ul>
+
+        <h2>3. Use of Data</h2>
+        <p>The data processed by FinAmigo is used solely to:</p>
+        <ul>
+            <li>Categorize your transactions automatically.</li>
+            <li>Calculate your FinAmigo Score™.</li>
+            <li>Generate visual dashboards and financial insights on your device.</li>
+        </ul>
+
+        <h2>4. Data Sharing and Third Parties</h2>
+        <p><strong>We do not sell, rent, or share your personal or financial data with any third parties.</strong> Because your data never leaves your device, there is nothing for us to share.</p>
+
+        <h2>5. Security</h2>
+        <p>We enforce strict security measures to protect the data stored on your device:</p>
+        <ul>
+            <li><strong>Mandatory Biometric Lock:</strong> The app requires fingerprint, Face ID, or PIN authentication to open.</li>
+            <li><strong>Secure Credential Storage:</strong> OAuth tokens and App Passwords are stored using secure keystore mechanisms provided by your operating system.</li>
+        </ul>
+
+        <h2>6. Changes to This Policy</h2>
+        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+
+        <h2>7. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us at support@finamigo.app.</p>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <img src="assets/images/app_icon.png" alt="FinAmigo Logo" style="height: 30px;">
+                        FinAmigo
+                    </div>
+                    <p style="font-size: 0.9rem;">Your offline-first personal finance dashboard. Taking back control of your privacy and money.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html" class="highlight">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> FinAmigo. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
