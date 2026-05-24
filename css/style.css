@@ -587,6 +587,55 @@ footer {
   color: var(--text-3);
 }
 
+/* ── Legal Pages ─────────────────────────────────────────────────────────── */
+.legal-content {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 5rem;
+}
+.legal-content h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin-bottom: 0.4rem;
+}
+.legal-content h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: left;
+  color: var(--text-1);
+  margin: 2.2rem 0 0.6rem;
+  letter-spacing: 0;
+}
+.legal-content p {
+  margin-bottom: 0.9rem;
+  line-height: 1.75;
+}
+.legal-content ul {
+  padding-left: 1.4rem;
+  margin-bottom: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.legal-content li {
+  color: var(--text-2);
+  line-height: 1.7;
+  font-size: 1.02rem;
+}
+.legal-content strong { color: var(--text-1); }
+.legal-content a { color: var(--teal); text-decoration: none; }
+.legal-content a:hover { text-decoration: underline; }
+.last-updated {
+  font-size: 0.85rem;
+  color: var(--text-3);
+  font-family: var(--mono);
+  margin-bottom: 2.5rem;
+}
+.legal-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
 /* ── Animations ──────────────────────────────────────────────────────────── */
 .fade-up {
   opacity: 0;

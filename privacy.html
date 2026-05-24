@@ -1,98 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - FinAmigo</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/png" href="assets/images/app_icon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — FinAmigo</title>
+  <meta name="description" content="Privacy Policy for FinAmigo, the offline-first personal finance app by AmigolLabs.">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/images/app_icon.png">
 </head>
 <body>
-    <nav style="background: rgba(0, 0, 0, 0.9);">
-        <div class="container nav-content">
-            <a href="index.html" class="logo">
-                <img src="assets/images/app_icon.png" alt="FinAmigo Logo">
-                FinAmigo
-            </a>
-            <div class="nav-links">
-                <a href="index.html#features">Features</a>
-                <a href="index.html#showcase">How it Works</a>
-            </div>
+
+  <nav id="navbar">
+    <div class="container nav-content">
+      <a href="https://amigolabs.in" class="org-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        AmigolLabs
+      </a>
+      <a href="index.html" class="logo">
+        <img src="assets/images/app_icon.png" alt="FinAmigo">
+        FinAmigo
+      </a>
+      <div class="nav-links">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#banks">Banks</a>
+        <a href="terms.html">Terms</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#banks">Supported Banks</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="https://amigolabs.in">← AmigolLabs</a>
+    </div>
+  </nav>
+
+  <main class="legal-content">
+    <h1>Privacy <span class="highlight">Policy</span></h1>
+    <div class="last-updated">Last updated: 24 May 2026</div>
+
+    <p>
+      FinAmigo is a personal finance dashboard built on an <strong>offline-first</strong> principle — your financial
+      data lives on your device, encrypted, under your control. This Privacy Policy explains what data FinAmigo
+      collects, how it is used, what is shared, and what your rights are.
+    </p>
+    <p>
+      FinAmigo is operated by <strong>AmigolLabs</strong>. By using the app, you agree to the practices described here.
+    </p>
+
+    <hr class="legal-divider">
+
+    <h2>1. Data We Collect and Why</h2>
+    <p>FinAmigo collects only what is necessary to provide your personal finance dashboard. No data is collected without a clear purpose tied to a feature you use.</p>
+
+    <h2>1a. Financial Transaction Data</h2>
+    <ul>
+      <li>Transaction records — date, amount, merchant, category, account type — imported from bank PDFs, CSV exports, Gmail bank statements, or SMS bank alerts.</li>
+      <li>Bank account names and types (savings, credit card) derived from your imported statements.</li>
+      <li>Your FinAmigo Score, spending summaries, and category tags generated from your transactions.</li>
+    </ul>
+    <p>All transaction data is stored locally on your device in an <strong>AES-256 encrypted SQLite database (SQLCipher)</strong>. It is never uploaded to FinAmigo's or AmigolLabs' servers.</p>
+
+    <h2>1b. Gmail Access</h2>
+    <ul>
+      <li>If you connect Gmail via Google Sign-In, FinAmigo requests <strong>read-only</strong> access (<code>gmail.readonly</code> scope) solely to search for bank statement emails and download PDF/CSV attachments.</li>
+      <li>Email parsing and PDF extraction happen entirely on your device. The raw email content and attachment contents are processed locally and are not transmitted to our servers.</li>
+      <li>Only the OAuth token (not your Gmail password) is stored, in your device's secure keystore.</li>
+      <li>You can revoke Gmail access at any time from Google's account settings at <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.</li>
+    </ul>
+
+    <h2>1c. SMS Messages (Android Only)</h2>
+    <ul>
+      <li>On Android, FinAmigo can read incoming SMS messages to detect bank transaction alerts (e.g. spend alerts from HDFC, ICICI, SBI).</li>
+      <li>SMS parsing runs entirely on your device. Only the transaction data extracted from the alert is saved — the raw SMS body is never stored or transmitted.</li>
+      <li>This feature is only enabled for Pro or Max subscribers, and only after you grant the SMS permission.</li>
+      <li>You can revoke the SMS permission at any time from Android Settings → Apps → FinAmigo → Permissions.</li>
+    </ul>
+
+    <h2>1d. AI Tagger — Gemini API (Pro / Max)</h2>
+    <ul>
+      <li>When you use the AI Tagger feature (available on Pro and Max tiers), transaction descriptions are sent to <strong>Google's Gemini API</strong> to automatically categorize them.</li>
+      <li>Only the transaction description text is sent — no account numbers, names, email content, or sensitive identifiers are included in these requests.</li>
+      <li>Data sent to the Gemini API is subject to <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Google's Gemini API Terms of Service</a>.</li>
+    </ul>
+
+    <h2>1e. Subscription and Purchase Data</h2>
+    <ul>
+      <li>FinAmigo uses <strong>RevenueCat</strong> to manage in-app subscriptions on Google Play and the Apple App Store.</li>
+      <li>RevenueCat receives your purchase receipt, subscription status, and an anonymous app user ID to verify entitlements. Your payment card details are never seen by FinAmigo or RevenueCat — those are handled entirely by Google Play or Apple.</li>
+      <li>RevenueCat's privacy policy is available at <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a>.</li>
+    </ul>
+
+    <h2>1f. App Preferences and Credentials</h2>
+    <ul>
+      <li>App settings such as your name, sync preferences, and theme choice are stored locally in SharedPreferences on your device.</li>
+      <li>Sensitive credentials such as your Gmail OAuth token and optional Gemini API key are stored in your device's secure keystore (Android Keystore / iOS Keychain) using <code>flutter_secure_storage</code>.</li>
+    </ul>
+
+    <hr class="legal-divider">
+
+    <h2>2. What We Do Not Collect</h2>
+    <ul>
+      <li>We do not collect, store, or transmit your raw financial transactions, bank balances, or statement files to any FinAmigo or AmigolLabs server.</li>
+      <li>We do not use third-party analytics SDKs (no Firebase Analytics, Mixpanel, Amplitude, or similar).</li>
+      <li>We do not use third-party crash reporting SDKs (no Sentry, Crashlytics, or similar).</li>
+      <li>We do not sell, rent, or trade any user data with advertisers or data brokers.</li>
+      <li>We do not read SMS messages for any purpose other than detecting bank transaction alerts.</li>
+    </ul>
+
+    <hr class="legal-divider">
+
+    <h2>3. How We Use Information</h2>
+    <ul>
+      <li>To parse, store, and display your financial transactions on your device.</li>
+      <li>To calculate your FinAmigo Score and generate spending insights locally.</li>
+      <li>To authenticate your identity with biometric lock and protect app access.</li>
+      <li>To verify your subscription status via RevenueCat and unlock premium features.</li>
+      <li>To automatically categorize transactions using Gemini AI when you opt in (Pro / Max).</li>
+    </ul>
+
+    <hr class="legal-divider">
+
+    <h2>4. Third-Party Services</h2>
+    <p>FinAmigo integrates with the following third-party services. Each operates under its own privacy policy:</p>
+    <ul>
+      <li><strong>Google Sign-In</strong> — OAuth authentication for Gmail access. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+      <li><strong>Google Gemini API</strong> — AI transaction categorization (Pro / Max only). <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API Terms</a></li>
+      <li><strong>RevenueCat</strong> — Subscription management. <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Privacy Policy</a></li>
+      <li><strong>Google Play / Apple App Store</strong> — Payment processing for subscriptions. Their respective privacy policies apply to payment transactions.</li>
+    </ul>
+
+    <hr class="legal-divider">
+
+    <h2>5. Security</h2>
+    <ul>
+      <li><strong>Encrypted database:</strong> All transaction data is stored in a SQLCipher-encrypted SQLite database on your device.</li>
+      <li><strong>Secure credential storage:</strong> OAuth tokens and API keys are stored using your OS secure keystore (Android Keystore / iOS Keychain), not in plain SharedPreferences.</li>
+      <li><strong>Biometric lock:</strong> The app requires fingerprint, Face ID, or PIN authentication every time it is opened.</li>
+      <li><strong>Encrypted SharedPreferences:</strong> App settings are encrypted with AES-256-GCM before being written to SharedPreferences.</li>
+    </ul>
+    <p>No security measure is absolute. We recommend keeping your device OS and FinAmigo up to date.</p>
+
+    <hr class="legal-divider">
+
+    <h2>6. Data Retention and Deletion</h2>
+    <p>
+      Your data lives on your device. If you want to delete everything, go to <strong>Settings → Sign Out</strong> inside the app.
+      This permanently deletes all transactions, settings, stored credentials, and cached data from your device.
+    </p>
+    <p>
+      Uninstalling the app will also remove all locally stored data. Because we do not store your financial data on servers,
+      we are unable to recover it once deleted.
+    </p>
+    <p>
+      RevenueCat retains subscription records as required for billing purposes. To request deletion of RevenueCat data,
+      contact us at <a href="mailto:admin@amigolabs.in">admin@amigolabs.in</a> and we will relay the request.
+    </p>
+
+    <hr class="legal-divider">
+
+    <h2>7. Children</h2>
+    <p>
+      FinAmigo is intended for users aged 13 and above and is designed for personal financial management.
+      We do not knowingly collect personal information from children under 13. If you believe a child has used the app,
+      contact us at <a href="mailto:admin@amigolabs.in">admin@amigolabs.in</a>.
+    </p>
+
+    <hr class="legal-divider">
+
+    <h2>8. Your Rights</h2>
+    <ul>
+      <li><strong>Access &amp; export:</strong> Use Settings → Export Data to CSV to export all your transactions at any time.</li>
+      <li><strong>Delete:</strong> Use Settings → Sign Out to permanently delete all data from your device.</li>
+      <li><strong>Revoke permissions:</strong> You can revoke Gmail or SMS permissions from your device settings at any time. The app will continue to work for manual PDF/CSV imports.</li>
+      <li><strong>Correct data:</strong> Transaction data can be edited directly inside the app.</li>
+    </ul>
+
+    <hr class="legal-divider">
+
+    <h2>9. Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time. The updated version will show a revised "Last updated" date at the top.
+      For material changes, we will notify you through the app or via the email associated with your subscription where available.
+    </p>
+
+    <hr class="legal-divider">
+
+    <h2>10. Contact Us</h2>
+    <p>
+      For privacy questions, data requests, or concerns, contact us at
+      <a href="mailto:admin@amigolabs.in">admin@amigolabs.in</a>.
+    </p>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="logo" style="margin-bottom:1rem;">
+            <img src="assets/images/app_icon.png" alt="FinAmigo" style="height:32px; border-radius:8px;">
+            FinAmigo
+          </a>
+          <p>Your offline-first personal finance dashboard. Taking back control of your privacy and money.</p>
+          <a href="https://amigolabs.in" class="org-back">A product by AmigolLabs ↗</a>
         </div>
-    </nav>
-
-    <main class="container legal-content">
-        <h1>Privacy <span class="highlight">Policy</span></h1>
-        <div class="last-updated">Last Updated: April 25, 2026</div>
-
-        <p>At FinAmigo, your privacy is our core foundation. We built this app with a strict "offline-first" architecture because we believe your financial data belongs exclusively to you.</p>
-
-        <h2>1. Data Collection and Storage</h2>
-        <ul>
-            <li><strong>Local Storage Only:</strong> All your financial data, including transaction history, bank statements, and account balances, is stored locally on your device in an encrypted SQLite database.</li>
-            <li><strong>No Cloud Syncing:</strong> We do not have servers to store your financial data. We do not sync your data to the cloud.</li>
-            <li><strong>No Tracking Analytics:</strong> We do not use third-party analytics trackers to monitor your behavior within the app.</li>
-        </ul>
-
-        <h2>2. Data Sources and Permissions</h2>
-        <p>To provide automated financial insights, FinAmigo requires certain permissions depending on the features you use:</p>
-        <ul>
-            <li><strong>Gmail Integration (OAuth/App Password):</strong> If you choose to connect Gmail, the app requests read-only access to scan for bank statements. This processing happens entirely on your device. The app extracts the PDF/CSV attachments, processes them locally, and discards the email content. We do not transmit your emails to our servers.</li>
-            <li><strong>SMS Permissions (Android Only):</strong> If enabled, the app reads incoming SMS messages strictly to identify transaction alerts from supported banks (HDFC, ICICI, SBI). This parsing happens locally on your device.</li>
-            <li><strong>Storage Access:</strong> Required to allow you to manually upload PDF or CSV bank statements.</li>
-        </ul>
-
-        <h2>3. Use of Data</h2>
-        <p>The data processed by FinAmigo is used solely to:</p>
-        <ul>
-            <li>Categorize your transactions automatically.</li>
-            <li>Calculate your FinAmigo Score™.</li>
-            <li>Generate visual dashboards and financial insights on your device.</li>
-        </ul>
-
-        <h2>4. Data Sharing and Third Parties</h2>
-        <p><strong>We do not sell, rent, or share your personal or financial data with any third parties.</strong> Because your data never leaves your device, there is nothing for us to share.</p>
-
-        <h2>5. Security</h2>
-        <p>We enforce strict security measures to protect the data stored on your device:</p>
-        <ul>
-            <li><strong>Mandatory Biometric Lock:</strong> The app requires fingerprint, Face ID, or PIN authentication to open.</li>
-            <li><strong>Secure Credential Storage:</strong> OAuth tokens and App Passwords are stored using secure keystore mechanisms provided by your operating system.</li>
-        </ul>
-
-        <h2>6. Changes to This Policy</h2>
-        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
-
-        <h2>7. Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy, please contact us at support@finamigo.app.</p>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <div class="logo" style="margin-bottom: 1rem;">
-                        <img src="assets/images/app_icon.png" alt="FinAmigo Logo" style="height: 30px;">
-                        FinAmigo
-                    </div>
-                    <p style="font-size: 0.9rem;">Your offline-first personal finance dashboard. Taking back control of your privacy and money.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy.html" class="highlight">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                &copy; <span id="year"></span> FinAmigo. All rights reserved.
-            </div>
+        <div class="footer-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#banks">Supported Banks</a></li>
+          </ul>
         </div>
-    </footer>
+        <div class="footer-col">
+          <h5>Follow</h5>
+          <ul>
+            <li><a href="https://instagram.com/finamigox" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="privacy.html" class="highlight">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year"></span> AmigolLabs. All rights reserved.
+      </div>
+    </div>
+  </footer>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
