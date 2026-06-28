@@ -18,6 +18,25 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
+  // ── Coming-soon toast ────────────────────────────────────────────────────
+  let toastTimer;
+  document.querySelectorAll('[data-toast]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      let toast = document.getElementById('toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'toast';
+        toast.className = 'toast';
+        document.body.appendChild(toast);
+      }
+      toast.textContent = el.getAttribute('data-toast');
+      requestAnimationFrame(() => toast.classList.add('show'));
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 4000);
+    });
+  });
+
   // ── Hamburger menu ───────────────────────────────────────────────────────
   const hamburger  = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
