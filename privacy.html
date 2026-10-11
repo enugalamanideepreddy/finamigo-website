@@ -74,7 +74,7 @@
       <li>Bank account names and types (savings, credit card) derived from your imported statements.</li>
       <li>Your FinAmigo Score, spending summaries, and category tags generated from your transactions.</li>
     </ul>
-    <p>All transaction data is stored locally on your device in an <strong>AES-256 encrypted SQLite database (SQLCipher)</strong>. It is never uploaded to FinAmigo's or AmigoLabs' servers.</p>
+    <p>All transaction data is stored locally on your device in an <strong>AES-256 encrypted SQLite database (SQLCipher)</strong>. Optional cloud AI features upload only batches you explicitly choose after providing cloud-inference consent. Offline imports and analysis remain available without this consent.</p>
 
     <h2>1b. Gmail Access</h2>
     <ul>
@@ -159,14 +159,17 @@
 
     <hr class="legal-divider">
 
+    <h2>Optional Cloud AI and Human Feedback</h2>
+    <p>Cloud suggestions, contribution to shared training, and AI-assisted seed labeling each require separate opt-ins. Selected transaction narrations, amounts, dates, bank/account context and confirmed account-name aliases may be processed in Mumbai (API/data) and Singapore (model compute). Gmail credentials, identity tokens and PDF passwords are excluded from model inputs.</p>
+    <p>Inference payloads are removed after job completion; failed or unfinished payloads expire within 24 hours. Human-confirmed training examples expire after 90 days. Personal feedback is retained until you delete it or withdraw permission. AI seed labels require human confirmation and curator approval before shared training. Operational logs omit transaction details.</p>
+    <p>Withdraw training consent to exclude your examples from future training and initiate replacement of affected model versions. Delete cloud learning data separately from local data. Cloud suggestions require review and do not overwrite manual decisions.</p>
     <h2>6. Data Retention and Deletion</h2>
     <p>
       Your data lives on your device. If you want to delete everything, go to <strong>Settings → Sign Out</strong> inside the app.
       This permanently deletes all transactions, settings, stored credentials, and cached data from your device.
     </p>
     <p>
-      Uninstalling the app will also remove all locally stored data. Because we do not store your financial data on servers,
-      we are unable to recover it once deleted.
+      Uninstalling the app will also remove all locally stored data. Local data cannot be recovered once deleted. Optional cloud learning data must also be deleted using Settings → AI classification and feedback → Delete my cloud learning data.
     </p>
     <p>
       RevenueCat retains subscription records as required for billing purposes. To request deletion of RevenueCat data,
@@ -211,7 +214,7 @@
     <ul>
       <li>Access information about personal data processed about you.</li>
       <li>Correct inaccurate or incomplete personal data.</li>
-      <li>Erase your personal data (see Section 6 above — since data is stored on-device, uninstalling or using Sign Out achieves this).</li>
+      <li>Erase your personal data (see Section 6 above — delete local data using Sign Out; separately use the cloud learning deletion control for optional cloud data).</li>
       <li>Nominate another person to exercise these rights on your behalf.</li>
     </ul>
     <p>To exercise any of these rights, contact us at <a href="mailto:admin@amigolabs.in">admin@amigolabs.in</a>.</p>
