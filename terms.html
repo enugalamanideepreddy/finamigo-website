@@ -52,20 +52,26 @@
 
   <main class="legal-content">
     <h1>Terms of <span class="highlight">Service</span></h1>
-    <div class="last-updated">Last updated: 26 May 2026</div>
+    <div class="last-updated">Last updated: 11 October 2026</div>
 
     <p>
       These Terms of Service ("Terms") govern your use of the FinAmigo mobile application ("App"),
-      operated by <strong>AmigoLabs</strong>. By downloading, installing, or using the App, you agree to these Terms.
+      operated by <strong>AmigoLabs</strong>. The App asks you to accept these Terms before continuing. Acceptance is recorded locally with the terms version and date.
       If you do not agree, do not use the App.
     </p>
 
     <hr class="legal-divider">
 
+    <h2>Optional AI classification and feedback</h2>
+    <p>FinAmigo may suggest one transaction category or classify relationships between transactions, including self transfers, credit card payments, refunds, and reimbursements. Suggestions may be incorrect; you are responsible for reviewing them. Manual corrections take priority over learned suggestions.</p>
+    <p>Accepting these Terms does not enable cloud processing or shared training. Cloud inference, contribution to shared training, and AI-assisted seed labeling each require a separate choice in the App and are off by default. Existing local transactions are not automatically uploaded.</p>
+    <p>With cloud inference enabled, explicitly submitted transaction narrations, amounts, dates, and account context are processed by our API and database in Mumbai; model compute may run in Singapore. Credentials and statement passwords are excluded from model inputs. Inference payloads are removed after job completion, or within 24 hours for failed jobs. Consented training examples expire after 90 days; personal feedback remains until deleted or withdrawn.</p>
+    <p>Only human-confirmed, curated examples are eligible for trusted shared training. Models are retrained in batches and evaluated before release. Undo retracts feedback; withdrawal excludes examples from future training and triggers replacement of affected model versions. You can change your choices or delete cloud data in the App. See the <a href="privacy.html">Privacy Policy</a> for details.</p>
+
     <h2>1. What FinAmigo Is</h2>
     <p>
       FinAmigo is a personal finance dashboard that helps you import, organize, and visualize your bank transactions
-      from PDFs, CSV exports, Gmail bank statements, and SMS bank alerts — all processed locally on your device.
+      from PDFs, CSV exports, Gmail bank statements, and SMS bank alerts. Imports are parsed locally; optional AI classification uses cloud processing only with your separate consent.
     </p>
     <p>
       <strong>FinAmigo is a data visualization and tracking tool only.</strong> It does not provide professional financial,
