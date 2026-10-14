@@ -30,6 +30,21 @@ document.addEventListener('DOMContentLoaded',()=>{
      const prior=remote[key];
      if(!prior||Date.parse(review.reviewed_at||0)>Date.parse(prior.reviewed_at||0)){await cloudRequest(`reviews/${encodeURIComponent(key)}`,'PATCH',review);remote[key]=review;}
     }
+    // Retain reviewed pairs from the previous snapshot; new rules only replace pending candidates.
+    const oldManifest=await cloudRequest('snapshots/current');
+    if(oldManifest){
+     const info=JSON.parse(oldManifest.fields.payload.stringValue);
+     for(const name of info.chunks||[]){
+      if(!name.includes('-pairs-'))continue;
+      const chunk=await cloudRequest(`snapshots/${encodeURIComponent(name)}`);
+      if(!chunk)continue;
+      const part=JSON.parse(chunk.fields.payload.stringValue);
+      for(const row of part.rows||[]){
+       const review=remote[`pairs:${row[0]}`];
+       if(review&&review.status!=='undone'&&!data.datasets.pairs.some(p=>p[0]===row[0]))data.datasets.pairs.push(row);
+      }
+     }
+    }
     const generation=crypto.randomUUID(),chunks=[];
     for(const [kind,rows]of Object.entries(data.datasets)){
      for(let i=0;i<rows.length;i+=100){status.textContent=`Syncing ${kind}: ${Math.min(i+100,rows.length)} of ${rows.length}…`;const name=`${generation}-${kind}-${i}`;await cloudRequest(`snapshots/${name}`,'PATCH',{kind,rows:rows.slice(i,i+100)});chunks.push(name);}
