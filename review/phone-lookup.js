@@ -3,7 +3,7 @@
  'use strict';
  const lib=typeof module==='object'&&module.exports?require('./vendor/libphonenumber-max.js'):root.libphonenumber;
  function normalize(value,country='IN'){
-  try{const p=lib.parsePhoneNumberFromString(String(value||'').trim(),{defaultCountry:country,extract:false});if(!p||!p.isValid())return null;return {number:p.number,country:p.country||null,type:p.getType()||'UNKNOWN',national:p.formatNational(),international:p.formatInternational(),lookupUrl:`https://www.truecaller.com/search/${(p.country||country).toLowerCase()}/${encodeURIComponent(p.nationalNumber)}`};}catch{return null;}
+  try{const p=lib.parsePhoneNumberFromString(String(value||'').trim(),{defaultCountry:country,extract:false});if(!p||!p.isValid())return null;return {number:p.number,country:p.country||null,type:p.getType()||'UNKNOWN',national:p.formatNational(),international:p.formatInternational()};}catch{return null;}
  }
  function fromNarration(text){
   // Only a fully numeric UPI handle: never treat RRN, account or IFSC fields as phone numbers.
