@@ -1,0 +1,5 @@
+const test=require('node:test'),assert=require('node:assert/strict'),m=require('../review-model.js');
+function row(){const r=[];r[0]=6;return r;}
+test('prediction is a suggestion until explicit save',()=>{const r=row(),prediction=m.prediction(r,null,{'6':{suggested_category_id:'food_dining'}},'run');assert.equal(prediction.category,'Food & Dining');assert.deepEqual(m.metrics({},'run'),{confirmed:0,correct:0});assert.equal(m.feedback(prediction,'Food & Dining').correct,true);assert.equal(m.feedback(prediction,'Groceries').correct,false);});
+test('original prediction survives later model outputs',()=>{const original={run:'old',category:'Groceries'};assert.equal(m.prediction(row(),{model_prediction:original},{'6':{suggested_category_id:'transfers'}},'new'),original);});
+test('undo and other runs are excluded; receipt parents are not scored',()=>{assert.deepEqual(m.metrics({a:{status:'undone',model_prediction:{run:'run'},model_feedback:{correct:true}},b:{model_prediction:{run:'other'},model_feedback:{correct:true}}},'run'),{confirmed:0,correct:0});const r=row();r[22]={};assert.equal(m.prediction(r,null,{'6':{suggested_category_id:'transfers'}},'run'),null);});
